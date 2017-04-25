@@ -14,7 +14,8 @@ int     ft_isascii(int c);
 int     ft_isprint(int c);
 int     ft_toupper(int c);
 int     ft_tolower(int c);
-
+void    *ft_memset(void *ptr, int c, size_t length);
+void    *ft_memcpy(void *dest, const void *src, size_t n);
 int main()
 {
     /* TEST strcat, strdup, puts
@@ -100,5 +101,23 @@ int main()
         i++;
     }
     */
+
+    /* TEST memset
+    char *coucou = malloc(100);
+    coucou = ft_memset(coucou, 'a', 10);
+    int i = 0;
+    while (i <= 15)
+    {
+        printf("i = %d, char = %c\n", i, coucou[i]);
+        i++;
+    }*/
+
+    /* TEST memcpy
+    char *str1 = ft_strdup("je t'aime bien le monsieur tout dur\n");
+    char *str2 = ft_strdup("je t'aime pas ");
+    str1 = ft_memcpy(str1, str2, ft_strlen(str2));
+    ft_puts(str1);
+    */
+
     return (0);
 }
