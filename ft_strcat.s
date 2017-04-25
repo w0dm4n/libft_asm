@@ -27,19 +27,13 @@ cmp     rax, 0
 jg      _goto
 ret
 
-_print_me:
-mov rax, 0x2000004      
-mov rdi, 1           
-mov rsi, r12
-mov rdx, 1             
-syscall
-
 _add_data:
 inc r13
 
+mov rcx, 1 ; src len for movsb;
+mov rsi, r12 ; src for movsb
+mov rdi, r11 ; dest for movsb
 movsb
-;movsb byte[r11], byte[r12]
-;mov byte[r11], 'U'
 
 inc r11
 inc r12
@@ -53,15 +47,22 @@ mov rax, r9
 mov rdi, r11
 
 call _goto
+
 mov r11, rdi
 
+cmp r9, 0
+jz _if_empty
 
+; if first arg not empty
 mov r13, 0
 call _add_data
+mov qword[r11], 0
 
 ret
 
-;Les six premiers param`etres entiers sont pass´es dans rdi , rsi ,
-;rdx, rcx, r8 et r9 dans cet ordre. Les autres sont pass´es par la
-;pile
-;https://github.com/nikAizuddin/study_x86asm_linux/blob/master/simple_string_ops/simple_string_ops.asm
+_if_empty:
+mov r13, 0
+dec r11
+call _add_data
+mov qword[r11], 0
+ret
