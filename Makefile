@@ -1,7 +1,8 @@
 NAME	= 	libfts.a
 SRC		=	ft_strlen.s \
 			ft_puts.s	\
-			ft_bzero.s
+			ft_bzero.s	\
+			ft_strcat.s
 
 OBJ			= $(SRC:.s=.o)
 CC			= ~/.brew/Cellar/nasm/2.12.02/bin/nasm -f macho64
