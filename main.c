@@ -24,6 +24,7 @@ int     ft_isupper(int c);
 int     ft_islower(int c);
 void    *ft_memchr(const void *ptr, void *c, size_t n);
 char    *ft_strndup(char *str, size_t n);
+void    ft_replace(char *str, void *find, void *set);
 int main()
 {
     /* TEST strcat, strdup, puts
@@ -153,7 +154,11 @@ int main()
     res = ft_memchr(a, "S", ft_strlen(a));
     if (res == NULL)
         ft_puts("res is null\n");
-    char *strndup = ft_strndup("Hello donne moi une partie", 6);
-    ft_puts(strndup);*/
+    char *strndup = ft_strndup("Hello donne moi un bout de toi", 6);
+    ft_puts(strndup);
+    char *replace = ft_strdup("Bonjour aaaaa remplace aaaaa moi tout aaaaa les caracteres !aaaa\n");
+    ft_replace(replace, "a", "b");
+    ft_puts(replace);*/
+
     return (0);
 }
