@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
 
 int     ft_puts(const char*);
 int     ft_strlen(const char *);
@@ -16,6 +17,7 @@ int     ft_toupper(int c);
 int     ft_tolower(int c);
 void    *ft_memset(void *ptr, int c, size_t length);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
+void    ft_cat(size_t fd);
 int main()
 {
     /* TEST strcat, strdup, puts
@@ -117,6 +119,16 @@ int main()
     char *str2 = ft_strdup("je t'aime pas ");
     str1 = ft_memcpy(str1, str2, ft_strlen(str2));
     ft_puts(str1);
+    */
+
+    /* TEST ft_cat
+    int fd = open("Makefile", O_RDONLY);
+    if (fd > 0)
+    {
+        ft_cat(fd);
+        while (42)
+            ft_cat(0);
+    }
     */
 
     return (0);
