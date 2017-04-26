@@ -18,10 +18,16 @@ int     ft_tolower(int c);
 void    *ft_memset(void *ptr, int c, size_t length);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
 void    ft_cat(size_t fd);
+
+/* BONUS */
+int     ft_isupper(int c);
+int     ft_islower(int c);
+void    *ft_memchr(const void *ptr, void *c, size_t n);
+char    *ft_strndup(char *str, size_t n);
 int main()
 {
     /* TEST strcat, strdup, puts
-   char *hello = malloc(100);
+    char *hello = malloc(110);
     ft_strcat(hello, "Bonjour");
     char *resu = ft_strcat(hello, "monsieur                     ca va?            oui ;p\n");
     ft_strcat(resu, "Coucou est-ce que tu vas bien ??\n moi oui cv :P \n");
@@ -131,5 +137,23 @@ int main()
     }
     */
 
+
+    /* BONUS TEST*/
+    /*if (ft_isupper('A'))
+        ft_puts("A is upper !\n");
+    if (ft_islower('a'))
+        ft_puts("a is lower !\n");
+    
+    char *a = ft_strdup("abcdefZghijkl\n");
+    void *res = ft_memchr(a, "Z", ft_strlen(a));
+    if (res != NULL)
+    {
+        ft_puts((char*)res);
+    }
+    res = ft_memchr(a, "S", ft_strlen(a));
+    if (res == NULL)
+        ft_puts("res is null\n");
+    char *strndup = ft_strndup("Hello donne moi une partie", 6);
+    ft_puts(strndup);*/
     return (0);
 }

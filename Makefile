@@ -15,7 +15,9 @@ SRC		=	ft_strlen.s 	\
 			ft_islower.s	\
 			ft_memset.s		\
 			ft_memcpy.s		\
-			ft_cat.s
+			ft_cat.s		\
+			ft_memchr.s		\
+			ft_strndup.s
 OBJ			= $(SRC:.s=.o)
 CC			= ~/.brew/Cellar/nasm/2.12.02/bin/nasm -f macho64
 
